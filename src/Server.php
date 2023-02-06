@@ -48,13 +48,14 @@ class Server {
     }
 
     protected function setupRouting($app) {
-        $app->post('/hello', function (Request $req, Response $res, $args) {
+        $app->any('/hello', function (Request $req, Response $res, $args) {
             return response($res, [
                 'method' => $req->getMethod(),
                 'params' => [
                     'get' => getGetParams($req),
                     'post' => getPostParams($req),
                 ],
+                'env' => $_ENV,
             ]);
         });
     }

@@ -1,1 +1,1 @@
-php -S localhost:8080 ./src/index.php
+php -S localhost:8080 index.php
